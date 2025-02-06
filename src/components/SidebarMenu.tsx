@@ -41,7 +41,7 @@ export function SidebarMenu() {
     },
 ]
 //  @typescript-eslint/no-explicit-any
-const handleClickMobileNav = (e: any, closeMenu: () => void) => {
+const handleClickMobileNav = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, closeMenu: () => void) => {
   e.preventDefault(); // Prevent default anchor behavior
   closeMenu(); // Close the menu immediately
 

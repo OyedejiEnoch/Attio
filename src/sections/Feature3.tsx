@@ -12,7 +12,6 @@ import { stagger } from 'motion'
 
 const Feature3 = () => {
         const [titleScope, titleAnimate] = useAnimate();
-        const [secondTitleScope, secondTitleAnimate] = useAnimate();
         const [scope, animate] = useAnimate();
         const isInView = useInView(scope,  { once: true })
   
@@ -21,11 +20,8 @@ const Feature3 = () => {
               types:'lines,words',
               tagName:'span'
           });
-            new SplitType(secondTitleScope.current, {
-              types:'lines,words',
-              tagName:'span'
-          });
-          }, [titleScope, secondTitleScope])
+
+          }, [titleScope])
         
           useEffect(() => {
             if (isInView) {
