@@ -40,6 +40,7 @@ export function SidebarMenu() {
         link:'#pricing'
     },
 ]
+//  @typescript-eslint/no-explicit-any
 const handleClickMobileNav = (e: any, closeMenu: () => void) => {
   e.preventDefault(); // Prevent default anchor behavior
   closeMenu(); // Close the menu immediately

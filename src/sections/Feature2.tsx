@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import featureImage2 from '@/assets/featureImg2.svg'
 import featureImage3 from '@/assets/featureImg3.svg'
 import featureImage4 from '@/assets/featureImg4.svg'
@@ -18,8 +18,8 @@ import { stagger } from 'motion'
 
 const Feature2 = () => {
       const [titleScope, titleAnimate] = useAnimate();
-      const [scope, animate] = useAnimate();
-      const isInView = useInView(scope,  { once: true })
+      const ref =useRef(null)
+      const isInView = useInView(ref,  { once: true })
 
        useEffect(()=>{
           new SplitType(titleScope.current, {
@@ -39,10 +39,10 @@ const Feature2 = () => {
             })
     
           }
-        }, [isInView, scope]);
+        }, [isInView,titleAnimate, titleScope]);
 
   return (
-    <section ref={scope} className='py-24'>
+    <section ref={ref} className='py-24'>
       <div className='container'>
         <h2 ref={titleScope} className='text-4xl md:text-5xl font-semibold max-w-[500px]'>Modeled around your data and workflows.</h2>
         <p 

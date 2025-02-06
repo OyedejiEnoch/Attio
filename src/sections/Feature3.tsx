@@ -25,7 +25,7 @@ const Feature3 = () => {
               types:'lines,words',
               tagName:'span'
           });
-          }, [titleScope])
+          }, [titleScope, secondTitleScope])
         
           useEffect(() => {
             if (isInView) {
@@ -36,16 +36,10 @@ const Feature3 = () => {
                   duration:0.5,
                   delay:stagger(0.2)
               })
-              secondTitleAnimate( titleScope.current.querySelectorAll('.word'), {
-                  transform:'translateY(0)'
-                          
-                }, {
-                  duration:0.5,
-                  delay:stagger(0.2)
-              })
+            
       
             }
-          }, [isInView, animate, scope]);
+          }, [isInView, animate, scope, titleAnimate, titleScope, ]);
   return (
     <section ref={scope} className='py-24'>
       <div className='container'>

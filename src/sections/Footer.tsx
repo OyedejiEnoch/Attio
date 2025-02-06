@@ -52,8 +52,8 @@ const Footer = () => {
             <div key={link.id} className='flex flex-col gap-4'>
                 <h2 className='text-gray-300 text-sm'>{link.title}</h2>
                 <div className='flex flex-col gap-3'>
-                    {link.links.map((link)=>(
-                        <span className='text-[12px] text-gray-500 cursor-pointer'>{link}</span>
+                    {link.links.map((link, index)=>(
+                        <span key={index} className='text-[12px] text-gray-500 cursor-pointer'>{link}</span>
                     ))}
                 </div>
             </div>

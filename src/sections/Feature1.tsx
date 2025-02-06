@@ -35,7 +35,7 @@ const Feature1 = () => {
         { duration: 2, ease: "easeOut" } // Animation timing
       );
     }
-  }, [isInView, animate, scope]);
+  }, [isInView, animate, scope, titleAnimate, titleScope]);
 
   return (
     <section ref={scope} className='py-24'>
